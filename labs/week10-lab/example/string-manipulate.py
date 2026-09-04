@@ -94,7 +94,7 @@ print(f"str1 * 3 = {repeat}")
 
 print("\n=== APPENDING STRINGS ===")
 greeting = 'hello'
-name = input("Enter your name: ")
+name = input("Enter your name: ") # สมมุติผู้ใช้พิมพ์ Nawapol
 greeting += name
 greeting += ". welcome to pune"
 print(greeting)
