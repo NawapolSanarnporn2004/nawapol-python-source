@@ -2,6 +2,7 @@ class Car:
     # Class attribute (shared by all instances)
     wheels = 4
     vehicle_type = "Car"
+# เป็นตัวแปรที่ แชร์ร่วมกันในทุกๆ Object ที่สร้างจาก class นี้ รถทุกคันที่สร้างขึ้นจะมี 4 ล้อ และเป็นประเภท "Car" โดยอัตโนมัติ
     
     def __init__(self, brand, model, year):
         # Instance attributes (unique to each instance)
@@ -19,7 +20,7 @@ class Car:
         """Method to get car information"""
         return f"{self.year} {self.brand} {self.model} - Mileage: {self.mileage} km"
     
-    @classmethod
+    @classmethod # ใช้ @classmethod และรับค่า cls เพื่อเข้าถึงตัวแปรของ Class โดยตรง สามารถเรียกใช้ผ่านชื่อ Class ได้เลยโดยไม่ต้องสร้าง Object ก่อน
     def get_vehicle_type(cls):
         """Class method to access class attributes"""
         return cls.vehicle_type
@@ -27,6 +28,7 @@ class Car:
 # Creating instances
 car1 = Car("Toyota", "Camry", 2022)
 car2 = Car("Honda", "Civic", 2021)
+car3 = Car("Isuzu", "Civic", 2021)
 
 # Accessing class attributes
 print(f"All cars have {Car.wheels} wheels")
@@ -37,5 +39,7 @@ print(car1.get_info())
 print(car2.get_info())
 
 # Using methods
-print(car1.drive(100))
-print(car2.drive(250))
+print(car1.drive(100)) # car1 มี mileage = 0 + 100
+print(car2.drive(250)) # car2 มี mileage = 0 + 250
+
+print(car1.drive(200))
